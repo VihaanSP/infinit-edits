@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vihaan Ashara — Creative Developer</title>
+  <meta name="description" content="Vihaan Ashara is a creative developer and video editor. I build websites that move.">
+  <meta property="og:title" content="Vihaan Ashara — Creative Developer">
+  <meta property="og:description" content="I build websites that move.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>V</text></svg>">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter+Tight:ital,wght@0,400..800;1,400..800&family=JetBrains+Mono:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+  
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Lenis -->
+  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Whip Pan Streak -->
+  <div id="whip-pan-streak"></div>
+  
+  <!-- Grain Overlay -->
+  <div id="grain"></div>
+
+  <!-- Persistent Life Reticle -->
+  <div id="reticle"></div>
+  
+  <!-- 3D Reel Canvas -->
+  <canvas id="reel-canvas"></canvas>
+
+  <!-- HUD -->
+  <div id="hud">
+    <div class="hud-item hud-left">
+      <div class="record-dot"></div> 
+      <span id="timecode">[REC] 00:00:00:00</span>
+      <div class="chapter-track">
+        <div class="chapter-dot"></div>
+      </div>
+    </div>
+    <div class="hud-item hud-center">
+      VELOCITY: <span id="velocity-readout">0</span>px/s
+    </div>
+    <div class="hud-item hud-right">
+      <span class="fps">FPS: <span id="fps-readout" style="color: var(--yellow)">60</span></span>
+      <div class="progress-ring-container">
+        <svg class="progress-ring" width="16" height="16">
+          <circle class="progress-ring__circle" stroke="var(--dim)" stroke-width="2" fill="transparent" r="6" cx="8" cy="8"/>
+          <circle class="progress-ring__value" stroke="var(--red)" stroke-width="2" fill="transparent" r="6" cx="8" cy="8"/>
+        </svg>
+      </div>
+      <span class="bpm">128 BPM</span>
+      <button id="intro-btn">[ ↩ INTRO ]</button>
+      <button id="mute-btn">[ SOUND ON ]</button>
+    </div>
+  </div>
+
+  <!-- Intro Overlay -->
+  <div id="intro-overlay">
+    <div class="overlay-content">
+      <h1 class="slam-text">VIHAAN ASHARA</h1>
+      <p class="sub-text">creative developer · video editor<br>sound on · scroll · it never ends</p>
+      <button id="enter-btn">TAP TO ENTER</button>
+    </div>
+    <div class="credit">Built by Vihaan Ashara — @eigen_cuts</div>
+  </div>
+
+  <!-- Sections -->
+  <div class="scroll-container">
+    <section id="s00" class="panel" style="height: 100vh;">
+      <div class="content-wrapper">
+        <h2 class="slam-heading">VIHAAN ASHARA</h2>
+        <p class="sub-text">I build websites that move.</p>
+      </div>
+    </section>
+    
+    <section id="s01" class="panel" style="height: 200vh; background-color: var(--surface-low);">
+      <div class="content-wrapper">
+        <h2 class="slam-heading">I CUT WEBSITES LIKE FILM.</h2>
+        <p class="sub-text" data-speed="0.15">No dead air. Pure motion.</p>
+      </div>
+    </section>
+    
+    <section id="s02" class="panel" style="height: 200vh; background-color: var(--bg);">
+      <div class="content-wrapper" data-highlight="1">
+        <h2 class="slam-heading">SELECTED WORK — I</h2>
+        <p class="body-line" data-speed="0.2">EIGENCUTS — video-editing portfolio for international clients</p>
+      </div>
+    </section>
+    
+    <section id="s03" class="panel" style="height: 200vh; background-color: var(--surface-low);">
+      <div class="content-wrapper" data-highlight="2">
+        <h2 class="slam-heading">SELECTED WORK — II</h2>
+        <p class="body-line" data-speed="0.2">PARUL AUTO SPLIT — split the rickshaw, split the fare</p>
+      </div>
+    </section>
+    
+    <section id="s04" class="panel" style="height: 200vh; background-color: var(--bg);">
+      <div class="content-wrapper" data-highlight="3">
+        <h2 class="slam-heading">SELECTED WORK — III</h2>
+        <p class="body-line" data-speed="0.2">STUDY OS — my semester command center</p>
+      </div>
+    </section>
+    
+    <section id="s05" class="panel" style="height: 250vh; background-color: var(--surface-low);">
+      <div class="content-wrapper">
+        <h2 class="slam-heading">THE TIMELINE IS THE SCROLL</h2>
+        <p class="sub-text" data-speed="0.15">Every section reacts to how fast you move. Try it.</p>
+      </div>
+    </section>
+    
+    <section id="s06" class="panel" style="height: 200vh; background-color: var(--bg);">
+      <div class="content-wrapper">
+        <!-- Interlude: Pure Atmosphere -->
+      </div>
+    </section>
+    
+    <section id="s07" class="panel" style="height: 200vh; background-color: var(--surface-low);">
+      <div class="content-wrapper">
+        <h2 class="slam-heading">EVERY CUT LANDS ON BEAT</h2>
+        <p class="sub-text" data-speed="0.15">128 BPM. Synthesized live. No audio files.</p>
+      </div>
+    </section>
+    
+    <section id="s08" class="panel" style="height: 200vh; background-color: var(--bg);">
+      <div class="content-wrapper">
+        <h2 class="slam-heading">HUMAN, NOT TEMPLATE</h2>
+        <p class="body-line">First-year CSE student.</p>
+        <p class="body-line">I edit video. Then I started cutting websites the same way —</p>
+        <p class="body-line">velocity, rhythm, impact. This site is cut, not coded.</p>
+      </div>
+    </section>
+    
+    <section id="s09" class="panel" style="height: 150vh; background-color: var(--surface-low);">
+      <div class="content-wrapper">
+        <h2 class="slam-heading">LET'S BUILD</h2>
+        <p class="body-line">vihaanashara@gmail.com</p>
+        <p class="body-line">@eigen_cuts</p>
+      </div>
+    </section>
+    
+    <section id="s10" class="panel" style="height: 100vh; background-color: transparent;">
+      <div class="content-wrapper">
+        <div class="record-dot"></div>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/intro.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/loop.js"></script>
+  <script src="js/velocity.js"></script>
+  <script src="js/diagnostics.js"></script>
+  <script src="js/strip.js"></script>
+</body>
+</html>
