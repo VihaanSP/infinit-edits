@@ -113,6 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
         pivot.add(c);
       });
 
+      if (window.playRubiksRotate) window.playRubiksRotate();
       gsap.to(pivot.rotation, {
         [axis]: angle,
         duration: duration,
@@ -205,10 +206,10 @@ document.addEventListener("DOMContentLoaded", () => {
       instantRotateFace(m.axis, m.layer, m.angle);
     }
     
-    // Drop in from top, spinning elegantly
     cubeGroup.position.set(0, 15, 0);
     cubeGroup.rotation.set(Math.PI, Math.PI / 4, 0);
 
+    if (window.playRubiksDrop) window.playRubiksDrop();
     await gsap.to(cubeGroup.position, { y: 0, duration: 1.4, ease: "bounce.out" });
     await gsap.to(cubeGroup.rotation, { x: 0, y: Math.PI / 6, z: 0, duration: 1.2, ease: "power2.out" }, "<");
     
@@ -228,6 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
     await new Promise(r => setTimeout(r, 500));
 
     // Disassemble (fly apart)
+    if (window.playRubiksShatter) window.playRubiksShatter();
     const tl = gsap.timeline();
     cubies.forEach(c => {
       const dir = c.position.clone().normalize();
@@ -275,6 +277,4 @@ document.addEventListener("DOMContentLoaded", () => {
     playSequence();
   };
 
-  // Auto-start
-  window.startEpicycles();
 });

@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Phase 7: Clickable Chapter Ticks
   const chapterTrack = document.querySelector('.chapter-track');
-  const numPanels = 11; // s00 to s10
+  const numPanels = 10; // s00 to s10 (skipping s03)
   if (chapterTrack) {
     for (let i = 0; i < numPanels; i++) {
       const tick = document.createElement('div');

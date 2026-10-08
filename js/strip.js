@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const stripGroup = new THREE.Group();
   
   // Frame settings
-  const numFrames = 20; // Cover infinite loop
+  const numFrames = 18; // Cover infinite loop (1800vh)
   const frameHeight = 2.0;
   const frameWidth = 3.4;
   const frameSpacing = 0.5;
@@ -28,12 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const helixRadius = 3.5;
   const helixTwist = Math.PI / 4; // 45 degrees per frame
   const totalSpacing = helixSpacing;
-  
   const projectNames = [
     "VIHAAN ASHARA", "I CUT WEBSITES", "LIKE FILM.", 
     "SELECTED WORK I", "EIGENCUTS", 
-    "SELECTED WORK II", "PARUL AUTO SPLIT", 
-    "SELECTED WORK III", "STUDY OS", 
+    "SELECTED WORK II", "STUDY OS", 
     "THE TIMELINE", "IS THE SCROLL", 
     "INTERLUDE", "PURE ATMOSPHERE", 
     "EVERY CUT", "LANDS ON BEAT", 
@@ -60,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ctx.fillRect(20, 40, 472, 220);
     
     ctx.fillStyle = '#F5F2EA';
-    ctx.font = 'bold 50px Anton';
+    ctx.font = 'bold 50px "Bebas Neue"';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     
@@ -209,9 +207,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const activeIndex = Math.floor(scrollSections + 0.5); 
     
     frames.forEach((f, i) => {
-      // Loop wrapping for visuals: 20 viewports per track
-      const normalizedI = i % 20;
-      const normalizedActive = activeIndex % 20;
+      // Loop wrapping for visuals: 18 viewports per track
+      const normalizedI = i % 18;
+      const normalizedActive = activeIndex % 18;
       
       if (normalizedI === normalizedActive) {
         // Highlight active frame

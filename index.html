@@ -13,7 +13,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter+Tight:ital,wght@0,400..800;1,400..800&family=JetBrains+Mono:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:ital,wght@0,400..800;1,400..800&family=JetBrains+Mono:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
   
   <!-- GSAP & ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -68,12 +68,13 @@
 
   <!-- Intro Overlay -->
   <div id="intro-overlay">
-    <div class="overlay-content">
+    <button id="start-intro-btn" style="position: absolute; z-index: 9999; padding: 1rem 2rem; background: var(--paper); color: var(--bg); border: none; font-family: 'Bebas Neue', sans-serif; font-size: 2rem; cursor: pointer; border-radius: 4px;">CLICK TO START</button>
+    <div class="overlay-content" style="opacity: 0; pointer-events: none;">
       <h1 class="slam-text">VIHAAN ASHARA</h1>
       <p class="sub-text">creative developer · video editor<br>sound on · scroll · it never ends</p>
       <button id="enter-btn">TAP TO ENTER</button>
     </div>
-    <div class="credit">Built by Vihaan Ashara — @eigen_cuts</div>
+    <div class="credit" style="opacity: 0;">Built by Vihaan Ashara — @eigen_cuts</div>
   </div>
 
   <!-- Sections -->
@@ -99,16 +100,9 @@
       </div>
     </section>
     
-    <section id="s03" class="panel" style="height: 200vh; background-color: var(--surface-low);">
+    <section id="s04" class="panel" style="height: 200vh; background-color: var(--surface-low);">
       <div class="content-wrapper" data-highlight="2">
         <h2 class="slam-heading">SELECTED WORK — II</h2>
-        <p class="body-line" data-speed="0.2">PARUL AUTO SPLIT — split the rickshaw, split the fare</p>
-      </div>
-    </section>
-    
-    <section id="s04" class="panel" style="height: 200vh; background-color: var(--bg);">
-      <div class="content-wrapper" data-highlight="3">
-        <h2 class="slam-heading">SELECTED WORK — III</h2>
         <p class="body-line" data-speed="0.2">STUDY OS — my semester command center</p>
       </div>
     </section>

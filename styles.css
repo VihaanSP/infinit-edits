@@ -180,10 +180,10 @@
 
     /* Typography */
     .slam-text, .slam-heading {
-      font-family: 'Anton', sans-serif;
+      font-family: 'Bebas Neue', sans-serif;
       text-transform: uppercase;
-      line-height: 0.88;
-      letter-spacing: -0.03em;
+      line-height: 1.0;
+      letter-spacing: 0.02em;
       margin: 0;
     }
 
