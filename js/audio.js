@@ -294,7 +294,6 @@ document.addEventListener("DOMContentLoaded", () => {
     startIntroBtn.addEventListener("click", () => {
        initAudio();
        if (window.audioCtx.state === 'suspended') window.audioCtx.resume();
-       if (!window.audioEnabled) toggleAudio();
     });
   }
 });

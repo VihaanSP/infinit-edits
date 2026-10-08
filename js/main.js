@@ -23,6 +23,16 @@ document.addEventListener("DOMContentLoaded", () => {
     enterBtn.addEventListener("click", dismissIntro);
   }
 
+  const startIntroBtn = document.getElementById("start-intro-btn");
+  if(startIntroBtn) {
+    startIntroBtn.addEventListener("click", () => {
+      startIntroBtn.style.display = "none";
+      if (window.startEpicycles) {
+        window.startEpicycles();
+      }
+    });
+  }
+
   const showIntro = () => {
     introOverlay.style.display = "flex";
     document.body.style.overflow = "hidden";

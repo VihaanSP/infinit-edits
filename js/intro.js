@@ -257,6 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.ticker.remove(render);
 
     // Text Slam In
+    if (overlayContent) overlayContent.style.opacity = "1";
     gsap.fromTo(slamText, 
       { opacity: 0, scale: 0.9, y: 20 }, 
       { opacity: 1, scale: 1, y: 0, duration: 0.8, ease: "back.out(1.5)" }
